@@ -15,7 +15,10 @@ rails new BunnyApp --database=postgresql -T #to define postgresql as the databas
 
 I want to create a new model called `Bunny`, with the following attributes: name (string), color (string), and age (integer). What command should I type in the terminal?
 
+-- Was confused by this question
 rails g migration CreateBunny name color age:integer
+
+-- Expected: rails g model Bunny name color age:integer
 
 ### Question 3
 
@@ -24,9 +27,16 @@ What does the command in Question 2 do, exactly? What files are created, where a
 This will create a timestamped migration file in the db/migrate folder of the current app which contains ruby code to create a table with the three columns listed above
 There is nothing in the database at this time.
 
+-- Expected rails g model:
+--- Creates a file app/models/bunny.rb
+--- This defines the Bunny as a ruby class AND creates a migration file in /db/migrate with the columns
+--- and datatypes expected in the generate command
+
 ### Question 4
 
 I want to create a database and make it reflect the new model I created in Question 2. What command(s) should I type in the terminal?
+
+-- 1/2 credit Missing the part to create a app/models/bunny.rb given I chose to go the path of rake g migration...
 
 rake db:create
 rake db:migrate
